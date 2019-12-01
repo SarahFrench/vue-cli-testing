@@ -160,10 +160,6 @@ class GameOfLife {
 
 export default {
   name: 'GameOfLife',
-  props: {
-    width: String,
-    height: String
-  },
   data(){
     return {
       game: new GameOfLife([[0,1,0],[0,1,0],[0,1,0]]),
