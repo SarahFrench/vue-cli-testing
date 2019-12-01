@@ -1,7 +1,7 @@
 <template>
   <div id="game">
     <h1>Game of Life</h1>
-    <div class="game__instructions">
+    <div class="game__instructions blue-border">
       <div class="game__instructions--left">
         <p>This is an implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a></p>
         <ul class="game__instructions-list">
@@ -15,10 +15,10 @@
       </div>
       <div class="game__instructions--right">
         <p>Enter a number here to resize the board:</p>
-        <input id="dimensions" type="text" name="dimensions" value="" v-model="dimensions">
+        <input id="dimensions" type="text" name="dimensions" v-model="dimensions">
         <button type="button" name="button" v-on:click="resizeGrid">Go</button>
 
-        <button class="d-block game__setup-button" type="button" name="button" v-on:click="seedLife">Randomly seed life</button>
+        <button class="d-block game__setup-button" type="button" v-on:click="seedLife">Randomly seed life</button>
         <button class="d-block game__setup-button" type="button" v-on:click="resizeGrid"> Remove all life from the game</button>
 
       </div>
@@ -29,7 +29,7 @@
     </div>
 
     <div v-if="searchForAnyLife">
-      <button class="d-block game__turn-button highlight" type="button" v-on:click="takeTurn"> Take a turn</button>
+      <button class="d-block game__turn-button blue-border" type="button" v-on:click="takeTurn"> Take a turn</button>
     </div>
 
 
@@ -59,7 +59,7 @@ export default {
       currentState: [],
       futureState: [],
       turns: 0,
-      dimensions: 20
+      dimensions: 10
     }
   },
   computed:{
@@ -225,6 +225,8 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
+  border: solid 1px;
+  margin: 0% 20%;
 }
 
 .game__instructions-list{
@@ -246,18 +248,25 @@ export default {
 .game__setup-button {
   margin: 1em auto;
   width: 100%;
+  background-color: white;
 }
 
 .game__turn-button {
   font-size: 1em;
   padding: 10px 5px;
   margin: 1em auto;
+}
+
+.blue-border {
   border: solid 1px #61ECFC;
   border-radius: 10px;
 }
+
 .board {
   margin-top: 3em;
   margin-bottom: 5em;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .board__row{
