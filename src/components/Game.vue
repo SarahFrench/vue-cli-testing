@@ -129,7 +129,7 @@ export default {
    },
    changeCellStatus(x,y){
      let cell = this.currentState[y][x];
-     cell.alive = !cell.alive;
+     this.$set(this.currentState[y][x], 'alive', !cell.alive);
    },
    resetFutureState(){
      this.futureState = [];
