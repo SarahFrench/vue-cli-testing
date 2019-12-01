@@ -88,7 +88,7 @@ export default {
  },
  methods:{
    resizeGrid(){
-     if(this.dimensions < 1){
+     if(typeof this.dimensions != 'number' || this.dimensions < 1){
        this.dimensions = 1;
      }
      this.currentState = [];
