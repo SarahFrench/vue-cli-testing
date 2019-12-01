@@ -1,4 +1,15 @@
-# testing-vue-cli
+# Conway's Game of Life
+Made as a Vue component
+
+## Deployment
+
+https://cli.vuejs.org/guide/deployment.html#github-pages
+- `gem install travis && travis --login`
+- logged in with my GitHub details
+- generated a token for Travis to use to access the repo
+  - added it as an ENV variable for the project using `travis env set <ENV_VAR_NAME> <value>`
+- Added the .travis.yml file with the correct ENV var name
+- pushed that .yml file to the repo
 
 ## Project setup
 ```
