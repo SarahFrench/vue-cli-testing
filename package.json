@@ -1,5 +1,5 @@
 {
-  "name": "testing-vue-cli",
+  "name": "vue-game-of-life",
   "version": "0.1.0",
   "private": true,
   "scripts": {

@@ -4,9 +4,13 @@
     <div class="game__instructions">
       <div class="game__instructions--left">
         <p>This is an implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a></p>
-        <p>Alive cells are black, dead cells are white.</p>
-        <p>If you click on a cell you can toggle it be alive/dead</p>
-        <p>Use the controls to the right to help set up the game</p>
+        <ul class="game__instructions-list">
+          <li>Alive cells are black, dead cells are white.</li>
+          <li>Before playing, you can click on a cell you can toggle it be alive/dead</li>
+          <li>Use the controls to the right to help set up the game</li>
+
+        </ul>
+        <small>TIP: after clicking 'Take a turn' once, press the space key to take more turns</small>
 
       </div>
       <div class="game__instructions--right">
@@ -79,15 +83,11 @@ export default {
    this.resizeGrid();
    console.log("GameOfLife component is loaded");
  },
- watch:{
-   dimensions: function(val){
-     if(val < 2){
-       this.dimensions = 2;
-     }
-   }
- },
  methods:{
    resizeGrid(){
+     if(this.dimensions < 1){
+       this.dimensions = 1;
+     }
      this.currentState = [];
      for (let i =0; i < this.dimensions; i++){
        this.currentState.push([]);
@@ -227,6 +227,17 @@ export default {
   align-items: baseline;
 }
 
+.game__instructions-list{
+  margin-left: 1em;
+  text-align: left;
+}
+
+.game__instructions--right {
+  padding: 0.5em;
+  margin-left: 1em;
+}
+
+
 .game__instructions--left {
   padding: 0.5em;
   margin-right: 1em;
@@ -244,12 +255,6 @@ export default {
   border: solid 1px #61ECFC;
   border-radius: 10px;
 }
-
-.game__instructions--right {
-  padding: 0.5em;
-  margin-left: 1em;
-}
-
 .board {
   margin-top: 3em;
   margin-bottom: 5em;
