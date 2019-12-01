@@ -18,10 +18,10 @@
       <div class="game__instructions--right">
         <p>Enter a number here to resize the board:</p>
         <input id="dimensions" class="dimensions-input" type="text" name="dimensions" v-model="dimensionsInput">
-        <button class="blue-border" type="button" name="button" v-on:click="resizeGrid">Go</button>
+        <button class="blue-border" type="button" name="button" v-on:click="resizeBoard">Go</button>
 
         <button class="d-block game__setup-button blue-border" type="button" name="button" v-on:click="seedLife">Randomly seed life</button>
-        <button class="d-block game__setup-button blue-border" type="button" name="button" v-on:click="resizeGrid"> Remove all life from the game</button>
+        <button class="d-block game__setup-button blue-border" type="button" name="button" v-on:click="resizeBoard"> Remove all life from the game</button>
 
       </div>
     </div>
@@ -95,14 +95,14 @@ export default {
     }
 },
  created(){
-   this.resizeGrid();
+   this.resizeBoard();
    console.log("GameOfLife component is loaded");
  },
  methods:{
    resetDimensionsInput(value=1){
      this.dimensionsInput = value;
    },
-   resizeGrid(){
+   resizeBoard(){
      this.currentState = [];
      for (let i =0; i < this.dimensions; i++){
        this.currentState.push([]);
