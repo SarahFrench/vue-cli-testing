@@ -21,8 +21,8 @@
         <input id="dimensions" type="text" name="dimensions" v-model="dimensions">
         <button type="button" name="button" v-on:click="resizeGrid">Go</button>
 
-        <button class="d-block game__setup-button" type="button" v-on:click="seedLife">Randomly seed life</button>
-        <button class="d-block game__setup-button" type="button" v-on:click="resizeGrid"> Remove all life from the game</button>
+        <button class="d-block game__setup-button" type="button" name="button" v-on:click="seedLife">Randomly seed life</button>
+        <button class="d-block game__setup-button" type="button" name="button" v-on:click="resizeGrid"> Remove all life from the game</button>
 
       </div>
     </div>
