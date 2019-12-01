@@ -17,7 +17,7 @@
       </div>
       <div class="game__instructions--right">
         <p>Enter a number here to resize the board:</p>
-        <input id="dimensions" class="dimensions-input" type="text" name="dimensions" v-model="dimensions">
+        <input id="dimensions" class="dimensions-input" type="text" name="dimensions" v-model="dimensionsInput">
         <button class="blue-border" type="button" name="button" v-on:click="resizeGrid">Go</button>
 
         <button class="d-block game__setup-button blue-border" type="button" name="button" v-on:click="seedLife">Randomly seed life</button>
@@ -62,7 +62,7 @@ export default {
       currentState: [],
       futureState: [],
       turns: 0,
-      dimensions: 10
+      dimensionsInput: 10
     }
   },
   computed:{
@@ -71,6 +71,18 @@ export default {
     },
     largestXCoordinate: function(){
       return this.currentState[0].length - 1;
+    },
+    dimensions: function(){
+      let number = parseInt(this.dimensionsInput);
+      if(isNaN(number) || number<1){
+        this.resetDimensionsInput();
+        return 1;
+      } else if (number > 200) {
+        this.resetDimensionsInput(200);
+        return 200;
+      } else {
+        return number;
+      }
     },
     searchForAnyLife: function(){
       let lifeFound = false;
@@ -87,10 +99,10 @@ export default {
    console.log("GameOfLife component is loaded");
  },
  methods:{
+   resetDimensionsInput(value=1){
+     this.dimensionsInput = value;
+   },
    resizeGrid(){
-     if(typeof this.dimensions != 'number' || this.dimensions < 1){
-       this.dimensions = 1;
-     }
      this.currentState = [];
      for (let i =0; i < this.dimensions; i++){
        this.currentState.push([]);
