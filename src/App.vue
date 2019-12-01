@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <Game/>
+    <footer>
+      Sarah French Nov 2019
+    </footer>
   </div>
 </template>
 
