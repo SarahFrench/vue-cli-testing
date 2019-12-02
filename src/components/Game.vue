@@ -281,6 +281,9 @@ export default {
 .dimensions-input {
   border: solid 1px #d3d3d3;
   background-color: white;
+  margin-right: 0.5em;
+  text-align: end;
+  width: 50px;
 }
 
 .board {
@@ -288,6 +291,7 @@ export default {
   margin-bottom: 5em;
   overflow: auto;
   white-space: nowrap;
+  padding: 1em;
 }
 
 .board__row{
