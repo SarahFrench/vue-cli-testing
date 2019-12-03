@@ -13,6 +13,7 @@
 
         </ul>
         <small>TIP: after clicking 'Take a turn' once, press the space key to take more turns</small>
+        <small class="d-block danger-text">If it gets stuck click 'remove all life from the game'</small>
 
       </div>
       <div class="game__instructions--right">
