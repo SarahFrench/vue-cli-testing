@@ -2,7 +2,7 @@
 
 I took the code I wrote in this repo [Conway's Game of Life](https://github.com/SarahFrench/ConwayGameOfLife) for a TDD exercise and adapted it into a Vue component.
 
-I thought that visualising the progression of a game would be fun to make, and as I've been learning Vue lately decided to make it as a Vue app. In particular, the way Vue handles data to create a 'single source of truth' helps make a project like this more managable.
+I thought that visualising the progression of a game would be fun to make, and as I've been learning Vue lately decided to make it as a Vue app. In particular, the way Vue handles data to create a 'single source of truth' helps make a project like this more manageable.
 
 As I'm still learning Vue (plus this was a short project) the code could do with refactoring, especially after learning more about how component re-rendering is triggered. E.g. in resizeBoard I tried to use <array>.map instead of the nested for loop, but that didn't trigger the board to be re-rendered like the nested for loops do!
 
@@ -20,30 +20,32 @@ I looked at this guide: https://cli.vuejs.org/guide/deployment.html#github-pages
 - pushed that .yml file to the repo
 - Had an issue with asset paths, resolved by adding vue.config.js to make the path look at this project's repo, not the main GitHub Pages one.
 
-## Project setup
+## Cloning this project
+
+### Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Run your tests
+#### Run your tests
 ```
 npm run test
 ```
 
-### Lints and fixes files
+#### Lints and fixes files
 ```
 npm run lint
 ```
 
-### Customize configuration
+#### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
